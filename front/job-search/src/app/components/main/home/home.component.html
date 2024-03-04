@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="container" style="margin-top: 2%;">
+    <h2>Main Component</h2>
+    <hr>
+    <p [ngStyle]="{'color': isLoggedIn ? 'green' : 'red'}">IsLoggedIn: {{ isLoggedIn }}</p>
+    <p>Email: {{ userEmail }}</p>
+    <p>Token: {{ userToken }}</p>   
+    <button *ngIf=" authGoogleService.isAuthenticated()" type="button" class="btn btn-danger mt-3" (click)="logOutGoogle()">Log out Google</button>
+    <button *ngIf="authService.isAuthenticated()" type="button" class="btn btn-danger mt-3" (click)="logOutApplicant()">Log out Applicant</button>
+</div>
